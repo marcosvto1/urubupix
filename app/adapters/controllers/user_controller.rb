@@ -6,4 +6,8 @@ class UserController
   def self.create(params)
     Users::Create.new(params: params).call
   end
+
+  def self.index
+    Users::GetUsers.new().call
+  end
 end
