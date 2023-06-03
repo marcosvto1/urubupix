@@ -1,0 +1,14 @@
+RSpec/ExampleWithoutDescription:
+  Enabled: false
+
+RSpec/NoExpectationExample:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/TransactionExitStatement:
+  Enabled: false
+
+AllCops:
+  NewCops: enable
