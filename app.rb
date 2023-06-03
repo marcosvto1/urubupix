@@ -1,4 +1,7 @@
 require "sinatra"
 require "sinatra/activerecord"
+require "dotenv"
 
-set :database, {adapter: "sqlite3", database: "db/urubu.sqlite3" }
+Dotenv.load
+
+set :database, {adapter: "sqlite3", database: ENV['DB_PATH'] }
