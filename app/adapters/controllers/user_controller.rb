@@ -5,10 +5,10 @@ require './app/adapters/repositories/user_repository'
 
 class UserController
   def self.create(params)
-    Users::Create.new(params: params).call
+    Users::Create.new(params:).call
   end
 
   def self.index
-    Users::GetUsers.new().call
+    Users::GetUsers.new.call
   end
 end

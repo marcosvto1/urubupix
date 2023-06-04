@@ -3,15 +3,15 @@ require './app/adapters/repositories/user_repository'
 
 module Users
   class Create
-      def initialize(params:, user: User, user_repository: UserRepository)
-        @params = params
-        @user = user
-        @user_repository = user_repository
-      end
+    def initialize(params:, user: User, user_repository: UserRepository)
+      @params = params
+      @user = user
+      @user_repository = user_repository
+    end
 
-      def call
-        user = @user.new(@params[:name])
-        @user_repository.create(user.to_hash)
-      end
+    def call
+      user = @user.new(@params[:name])
+      @user_repository.create(user.to_hash)
+    end
   end
 end
