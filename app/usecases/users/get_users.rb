@@ -9,7 +9,7 @@ module Users
     end
 
     def call
-      user_repository.all
+      @user_repository.all
     end
   end
 end

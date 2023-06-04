@@ -1,4 +1,5 @@
 require './app/usecases/users/create'
+require './app/usecases/users/get_users'
 require './app/model/user'
 require './app/adapters/repositories/user_repository'
 
