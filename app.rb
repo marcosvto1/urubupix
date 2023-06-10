@@ -1,11 +1,11 @@
 require "sinatra"
 require "sinatra/activerecord"
 require "dotenv"
-require "byebug"
 
 Dotenv.load
 
 require './app/adapters/controllers/user_controller'
+require './app/adapters/controllers/order_controller'
 
 post '/users' do
   {result: UserController.create(params)}.to_json
@@ -13,6 +13,10 @@ end
 
 get '/users' do
   {result: UserController.index()}.to_json
+end
+
+post '/orders' do
+  {result: OrderController.create(params)}.to_json
 end
 
 # module UrubuPix

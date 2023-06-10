@@ -3,6 +3,11 @@ ENV['RACK_ENV'] = 'test'
 require File.expand_path('../../config/environment.rb', __FILE__)
 
 require 'database_cleaner'
+require 'simplecov'
+
+SimpleCov.start
+
+DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
 
@@ -16,9 +21,10 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
-  config.before(:all) do
-    DatabaseCleaner.clean
+  config.before(:each) do
+    DatabaseCleaner.start
   end
+
   config.after(:each) do
     DatabaseCleaner.clean
   end
